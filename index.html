@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Slogan & Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 Brand Slogan & Name Generator</h1>
+            <p class="subtitle">Create unique slogans and brand names powered by AI</p>
+        </header>
+
+        <main class="main-content">
+            <section class="input-section">
+                <h2>Tell Us About Your Business</h2>
+                
+                <div class="form-group">
+                    <label for="industry">Industry / Field <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="industry" 
+                        placeholder="e.g., Technology, Fashion, Food & Beverage, Healthcare"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="keywords">Main Keywords / Core Values <span class="required">*</span></label>
+                    <textarea 
+                        id="keywords" 
+                        rows="3"
+                        placeholder="e.g., innovation, sustainability, quality, affordability"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="audience">Target Audience <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="audience" 
+                        placeholder="e.g., young professionals, families, tech enthusiasts"
+                        required
+                    >
+                </div>
+
+                <button id="generateBtn" class="btn-generate">Generate Ideas</button>
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Generating creative ideas...</p>
+                </div>
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+            </section>
+
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <h2>Generated Ideas</h2>
+                
+                <div class="results-container">
+                    <div class="results-column">
+                        <h3>💡 Brand Slogans</h3>
+                        <div id="slogansResult" class="ideas-list"></div>
+                    </div>
+
+                    <div class="results-column">
+                        <h3>🏷️ Brand Names</h3>
+                        <div id="brandNamesResult" class="ideas-list"></div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="regenerateBtn" class="btn-secondary">Regenerate</button>
+                    <button id="resetBtn" class="btn-secondary">Start Over</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by Google Gemini AI | Made for entrepreneurs and startups</p>
+            <p class="disclaimer"><strong>Note:</strong> This demo uses client-side API integration for educational purposes. In production, API keys should be securely handled on the backend.</p>
+        </footer>
+    </div>
+
+    <!-- Copy notification -->
+    <div id="copyNotification" class="copy-notification" style="display: none;">
+        ✓ Copied to clipboard!
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

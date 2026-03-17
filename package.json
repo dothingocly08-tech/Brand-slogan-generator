@@ -1,0 +1,40 @@
+{
+  "name": "brand-slogan-generator",
+  "version": "1.0.0",
+  "description": "AI-powered tool for generating unique slogans and brand names for businesses and startups",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -o",
+    "dev": "http-server -p 8000",
+    "docker:build": "docker build -t brand-slogan-generator .",
+    "docker:run": "docker run -p 8000:8000 brand-slogan-generator",
+    "docker:compose": "docker-compose up",
+    "test": "echo \"No tests configured yet\""
+  },
+  "keywords": [
+    "branding",
+    "slogan",
+    "brand-name",
+    "AI",
+    "generator",
+    "startup",
+    "marketing",
+    "gemini-api"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/brand-slogan-generator"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/brand-slogan-generator/issues"
+  },
+  "homepage": "https://github.com/yourusername/brand-slogan-generator"
+}
