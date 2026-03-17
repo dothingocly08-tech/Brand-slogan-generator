@@ -9,13 +9,13 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>Trình Tạo Slogan & Tên Thương Hiệu</h1>
+            <h1>Tạo Slogan & Tên Thương Hiệu</h1>
             <p class="subtitle">Tạo slogan và tên thương hiệu độc đáo bằng AI</p>
         </header>
 
         <main class="main-content">
             <section class="input-section">
-                <h2>Tạo Danh Tính Thương Hiệu Của Bạn</h2>
+                <h2>Tạo Thương Hiệu Của Bạn</h2>
                 
                 <div class="form-group">
                     <label for="companyName">Tên Công Ty <span class="required">*</span></label>
@@ -31,16 +31,16 @@
                     <label for="industry">Lĩnh Vực / Ngành <span class="required">*</span></label>
                     <select id="industry" required>
                         <option value="">-- Chọn Lĩnh Vực --</option>
-                        <option value="Technology">Technology</option>
-                        <option value="Fashion">Fashion</option>
-                        <option value="Food & Beverage">Food & Beverage</option>
-                        <option value="Healthcare">Healthcare</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Education">Education</option>
-                        <option value="Entertainment">Entertainment</option>
+                        <option value="Công nghệ">Technology</option>
+                        <option value="Thời trang">Fashion</option>
+                        <option value="Ăn uống">Food & Beverage</option>
+                        <option value="Sức khỏe">Healthcare</option>
+                        <option value="Tài chính">Finance</option>
+                        <option value="Giáo dục">Education</option>
+                        <option value="Giải trí">Entertainment</option>
                         <option value="E-commerce">E-commerce</option>
-                        <option value="Real Estate">Real Estate</option>
-                        <option value="Fitness">Fitness</option>
+                        <option value="Bất động sản">Real Estate</option>
+                        <option value="Thể dục">Fitness</option>
                     </select>
                 </div>
 
@@ -48,11 +48,11 @@
                     <label for="style">Phong Cách Thương Hiệu <span class="required">*</span></label>
                     <select id="style" required>
                         <option value="">-- Chọn Phong Cách --</option>
-                        <option value="Modern">Modern</option>
-                        <option value="Classic">Classic</option>
-                        <option value="Creative">Creative</option>
-                        <option value="Minimalist">Minimalist</option>
-                        <option value="Playful">Playful</option>
+                        <option value="Hiện đại">Modern</option>
+                        <option value="Cổ điển">Classic</option>
+                        <option value="Sáng tạo">Creative</option>
+                        <option value="Tối giản">Minimalist</option>
+                        <option value="Vui nhộn">Playful</option>
                     </select>
                 </div>
 
@@ -68,13 +68,13 @@
                 <button id="generateBtn" class="btn-generate">Tạo Thương Hiệu</button>
                 <div id="loading" class="loading" style="display: none;">
                     <div class="spinner"></div>
-                    <p>Đang tạo danh tính thương hiệu của bạn...</p>
+                    <p>Đang tạo thương hiệu của bạn...</p>
                 </div>
                 <div id="errorMessage" class="error-message" style="display: none;"></div>
             </section>
 
             <section id="resultsSection" class="results-section" style="display: none;">
-                <h2>Danh Tính Thương Hiệu Của Bạn</h2>
+                <h2>Thương Hiệu Của Bạn</h2>
                 
                 <div class="brand-results">
                     <div class="description-section">
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="slogan-section">
-                        <h3>Slogan Thương Hiệu</h3>
+                        <h3>Slogan</h3>
                         <div id="sloganResult" class="slogan-display"></div>
                     </div>
                 </div>
