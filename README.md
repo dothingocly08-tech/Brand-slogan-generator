@@ -1,25 +1,23 @@
-# Brand Slogan & Name Generator
+# Tạo Slogan & Quảng Bá Thương Hiệu
 
-A creative and intelligent web application that generates unique slogans and brand names for businesses and startups using AI technology.
+Một ứng dụng web sáng tạo và thông minh, tạo ra các khẩu hiệu và nội dung quảng bá độc đáo cho doanh nghiệp và các công ty khởi nghiệp bằng công nghệ trí tuệ nhân tạo.
 
-## Features
+## Tính năng
 
-- **AI-Powered Generation**: Uses Google Gemini API to generate creative slogans and brand names
-- **Intelligent Insights**: Each idea includes explanations of the meaning and feeling it conveys
-- **Easy to Use**: Simple, intuitive interface for entrepreneurs and business professionals
-- **Copy-to-Clipboard**: Quickly copy any slogan or brand name to clipboard
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Error Handling**: Clear, user-friendly error messages for better experience
+- **Tạo ra ý tưởng bằng AI**: Sử dụng API Google Gemini để tạo ra các khẩu hiệu và tên thương hiệu sáng tạo
+- **Dễ sử dụng**: Giao diện đơn giản, trực quan dành cho các doanh nhân và chuyên gia kinh doanh
+- **Sao chép vào clipboard**: Nhanh chóng sao chép bất kỳ khẩu hiệu hoặc tên thương hiệu nào vào clipboard
+- **Xử lý lỗi**: Thông báo lỗi rõ ràng, thân thiện với người dùng để mang lại trải nghiệm tốt hơn
 
-##  Quick Start
+##  Bắt đầu nhanh
 
-### Prerequisites
+### Chuẩn bị
 
-- Node.js (for local development and Docker)
-- Google Gemini API Key (free tier available at [Google AI Studio](https://aistudio.google.com))
-- Docker Desktop (for containerization)
+- Node.js 
+- Google Gemini API Key 
+- Docker Desktop 
 
-### Setup Instructions
+### Hướng dẫn
 
 1. **Clone the repository**
    ```bash
@@ -40,7 +38,7 @@ A creative and intelligent web application that generates unique slogans and bra
    # Visit http://localhost:8000
    ```
 
-##  Project Structure
+##  Cấu trúc dự án
 
 ```
 brand-slogan-generator/
@@ -54,24 +52,21 @@ brand-slogan-generator/
 └── README.md              # This file
 ```
 
-##  How to Use
+##  Cách sử dụng
 
-1. **Enter Business Information**
-   - **Industry/Field**: Describe your business sector
-   - **Keywords**: Enter core values or product keywords
-   - **Target Audience**: Specify who you're targeting
+1. **Nhập thông tin**
+   - **Tên công ty**: Nhập tên công ty
+   - **Lĩnh vực/Ngành**: Chọn lĩnh vực
+   - **Phong cách thương hiệu**: chọn phong cách
+   - **Ngôn ngữ**: chọn ngôn ngữ của kết quả
+2. **Tạo kết quả**
+   - chọn TẠO THƯƠNG HIỆU	
+   - Chờ AI xử lý 5-10 giây
 
-2. **Generate Ideas**
-   - Click the "Generate Ideas" button
-   - Wait for AI to process (usually 5-10 seconds)
 
-3. **Copy Ideas**
-   - Hover over any slogan or brand name
-   - Click "Copy" button to copy to clipboard
+## Docker
 
-## 🐳 Docker Setup
-
-### Build and Run with Docker
+### Hướng dẫn
 
 ```bash
 # Build the Docker image
@@ -89,28 +84,18 @@ docker run -p 8000:8000 brand-slogan-generator
 docker-compose up
 ```
 
-This will start the application on port 8000.
+Thao tác này sẽ khởi chạy ứng dụng trên cổng 8000.
 
-##  Deploy to Vercel
+##  Triển khai trên Vercel
 
-### Visit: https://brand-slogan-generator.vercel.app/
-
-
-## ⚠️ Security Note
-
-**IMPORTANT FOR PRODUCTION:**
-- The current implementation stores the API key in client-side code for educational purposes only
-- For production: Use environment variables or backend proxy
-- Never hardcode sensitive credentials in production code
+### Truy cập link: https://brand-slogan-generator.vercel.app/
 
 
-## 📄 License
+## Cảnh báo bảo mật
 
-This project is open-source
-
-## 👨‍💻 Author
-
-Created as an educational project for branding and AI integration learning.
+**Quan trọng**
+- Cách triển khai hiện tại : lưu trữ khóa API trực tiếp trong mã nguồn, chỉ nhằm mục đích giáo dục
+- Không được dùng phương pháp này trong môi trường production
 
 
 **Last Updated**: March 2026  
