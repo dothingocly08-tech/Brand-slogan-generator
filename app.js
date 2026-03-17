@@ -1,7 +1,7 @@
 // Configuration
 const CONFIG = {
-    API_ENDPOINT: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent',
-    API_KEY: 'AIzaSyBrRWpMDvwXKZzwYQhz-j4ByZpXX7X7X7X', // Replace with your actual API key
+    API_ENDPOINT: 'https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent',
+    API_KEY: 'AIzaSyBF7i6sgqxCuj8PSdbEedNM0tKJZVEbwBE',
 };
 
 // DOM Elements
@@ -13,10 +13,8 @@ const generateBtn = document.getElementById('generateBtn');
 const loadingDiv = document.getElementById('loading');
 const errorMessage = document.getElementById('errorMessage');
 const resultsSection = document.getElementById('resultsSection');
-const logoResult = document.getElementById('logoResult');
+const descriptionResult = document.getElementById('descriptionResult');
 const sloganResult = document.getElementById('sloganResult');
-const logoImage = document.getElementById('logoImage');
-const logoDescription = document.getElementById('logoDescription');
 const regenerateBtn = document.getElementById('regenerateBtn');
 const resetBtn = document.getElementById('resetBtn');
 const copyNotification = document.getElementById('copyNotification');
@@ -135,8 +133,8 @@ async function generateBrand(formData) {
 // Build prompt for AI
 function buildPrompt(formData) {
     return `
-You are a creative brand designer and marketing expert. Based on the following information, create:
-1. A detailed logo concept description (visual elements, layout, style)
+You are a professional marketing copywriter. Based on the following company information, create:
+1. A compelling 5-sentence company description for marketing purposes
 2. A catchy and memorable brand slogan
 
 Company Name: ${formData.companyName}
@@ -145,18 +143,17 @@ Brand Style: ${formData.style}
 Color Preferences: ${formData.colors}
 
 Format your response EXACTLY as follows:
-LOGO CONCEPT:
-[Detailed description of the logo including: visual elements, shapes, symbols, layout, and how it relates to the company]
+COMPANY DESCRIPTION:
+[5 sentences describing the company, its value proposition, target audience, and unique selling points in a compelling way suitable for marketing]
 
 BRAND SLOGAN:
 [A single, catchy and memorable slogan that reflects the company name, industry, and style]
 
 Make sure:
-- The logo concept is original and professional
+- The description is professional, engaging, and marketing-focused
 - The slogan is memorable, easy to remember, and reflects the brand personality
 - Both are appropriate for the ${formData.industry} industry
-- The design style matches the "${formData.style}" aesthetic
-- The suggested colors align with: ${formData.colors}
+- The writing style matches the "${formData.style}" aesthetic
 `;
 }
 
@@ -207,14 +204,14 @@ async function callGeminiAPI(prompt) {
 // Parse AI response
 function parseAIResponse(responseText) {
     const result = {
-        logoDescription: '',
+        description: '',
         slogan: '',
     };
 
-    // Extract LOGO CONCEPT section
-    const logoMatch = responseText.match(/LOGO\s+CONCEPT:\s*\n([\s\S]*?)(?=BRAND\s+SLOGAN:|$)/i);
-    if (logoMatch) {
-        result.logoDescription = logoMatch[1].trim();
+    // Extract COMPANY DESCRIPTION section
+    const descriptionMatch = responseText.match(/COMPANY\s+DESCRIPTION:\s*\n([\s\S]*?)(?=BRAND\s+SLOGAN:|$)/i);
+    if (descriptionMatch) {
+        result.description = descriptionMatch[1].trim();
     }
 
     // Extract BRAND SLOGAN section
@@ -228,9 +225,9 @@ function parseAIResponse(responseText) {
 
 // Display results
 function displayResults(result) {
-    // Display logo description
-    logoDescription.innerHTML = '';
-    logoDescription.textContent = result.logoDescription || 'Logo concept not generated';
+    // Display company description
+    descriptionResult.innerHTML = '';
+    descriptionResult.textContent = result.description || 'Company description not generated';
 
     // Display slogan
     sloganResult.innerHTML = '';
