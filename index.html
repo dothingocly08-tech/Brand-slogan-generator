@@ -15,58 +15,82 @@
 
         <main class="main-content">
             <section class="input-section">
-                <h2>Tell Us About Your Business</h2>
+                <h2>Create Your Brand Identity</h2>
                 
                 <div class="form-group">
+                    <label for="companyName">Company Name <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="companyName" 
+                        placeholder="e.g., TechVision, EcoWear, etc."
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
                     <label for="industry">Industry / Field <span class="required">*</span></label>
+                    <select id="industry" required>
+                        <option value="">-- Select Industry --</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Fashion">Fashion</option>
+                        <option value="Food & Beverage">Food & Beverage</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Education">Education</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="E-commerce">E-commerce</option>
+                        <option value="Real Estate">Real Estate</option>
+                        <option value="Fitness">Fitness</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="style">Brand Style <span class="required">*</span></label>
+                    <select id="style" required>
+                        <option value="">-- Select Style --</option>
+                        <option value="Modern">Modern</option>
+                        <option value="Classic">Classic</option>
+                        <option value="Creative">Creative</option>
+                        <option value="Minimalist">Minimalist</option>
+                        <option value="Playful">Playful</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="colors">Color Preference <span class="required">*</span></label>
                     <input 
                         type="text" 
-                        id="industry" 
-                        placeholder="e.g., Technology, Fashion, Food & Beverage, Healthcare"
+                        id="colors" 
+                        placeholder="e.g., blue, white and gold, vibrant red"
                         required
                     >
                 </div>
 
-                <div class="form-group">
-                    <label for="keywords">Main Keywords / Core Values <span class="required">*</span></label>
-                    <textarea 
-                        id="keywords" 
-                        rows="3"
-                        placeholder="e.g., innovation, sustainability, quality, affordability"
-                        required
-                    ></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="audience">Target Audience <span class="required">*</span></label>
-                    <input 
-                        type="text" 
-                        id="audience" 
-                        placeholder="e.g., young professionals, families, tech enthusiasts"
-                        required
-                    >
-                </div>
-
-                <button id="generateBtn" class="btn-generate">Generate Ideas</button>
+                <button id="generateBtn" class="btn-generate">Generate Brand</button>
                 <div id="loading" class="loading" style="display: none;">
                     <div class="spinner"></div>
-                    <p>Generating creative ideas...</p>
+                    <p>Creating your brand identity...</p>
                 </div>
                 <div id="errorMessage" class="error-message" style="display: none;"></div>
             </section>
 
             <section id="resultsSection" class="results-section" style="display: none;">
-                <h2>Generated Ideas</h2>
+                <h2>Your Brand Identity</h2>
                 
-                <div class="results-container">
-                    <div class="results-column">
-                        <h3>💡 Brand Slogans</h3>
-                        <div id="slogansResult" class="ideas-list"></div>
+                <div class="brand-results">
+                    <div class="logo-section">
+                        <h3>🎨 Logo Concept</h3>
+                        <div id="logoResult" class="logo-display">
+                            <div class="logo-placeholder">
+                                <img id="logoImage" src="" alt="Generated Logo" style="max-width: 100%; height: auto; display: none;">
+                                <div id="logoDescription" class="logo-description"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="results-column">
-                        <h3>🏷️ Brand Names</h3>
-                        <div id="brandNamesResult" class="ideas-list"></div>
+                    <div class="slogan-section">
+                        <h3>💡 Brand Slogan</h3>
+                        <div id="sloganResult" class="slogan-display"></div>
                     </div>
                 </div>
 
