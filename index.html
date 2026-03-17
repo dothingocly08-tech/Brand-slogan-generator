@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Slogan & Name Generator</title>
+    <title>Trình Tạo Slogan & Tên Thương Hiệu</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>Brand Slogan & Name Generator</h1>
-            <p class="subtitle">Create unique slogans and brand names powered by AI</p>
+            <h1>Trình Tạo Slogan & Tên Thương Hiệu</h1>
+            <p class="subtitle">Tạo slogan và tên thương hiệu độc đáo bằng AI</p>
         </header>
 
         <main class="main-content">
             <section class="input-section">
-                <h2>Create Your Brand Identity</h2>
+                <h2>Tạo Danh Tính Thương Hiệu Của Bạn</h2>
                 
                 <div class="form-group">
-                    <label for="companyName">Company Name <span class="required">*</span></label>
+                    <label for="companyName">Tên Công Ty <span class="required">*</span></label>
                     <input 
                         type="text" 
                         id="companyName" 
-                        placeholder="e.g., TechVision, EcoWear, etc."
+                        placeholder="Ví dụ: TechVision, EcoWear, v.v."
                         required
                     >
                 </div>
 
                 <div class="form-group">
-                    <label for="industry">Industry / Field <span class="required">*</span></label>
+                    <label for="industry">Lĩnh Vực / Ngành <span class="required">*</span></label>
                     <select id="industry" required>
-                        <option value="">-- Select Industry --</option>
+                        <option value="">-- Chọn Lĩnh Vực --</option>
                         <option value="Technology">Technology</option>
                         <option value="Fashion">Fashion</option>
                         <option value="Food & Beverage">Food & Beverage</option>
@@ -45,9 +45,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="style">Brand Style <span class="required">*</span></label>
+                    <label for="style">Phong Cách Thương Hiệu <span class="required">*</span></label>
                     <select id="style" required>
-                        <option value="">-- Select Style --</option>
+                        <option value="">-- Chọn Phong Cách --</option>
                         <option value="Modern">Modern</option>
                         <option value="Classic">Classic</option>
                         <option value="Creative">Creative</option>
@@ -57,52 +57,52 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="language">Language <span class="required">*</span></label>
+                    <label for="language">Ngôn Ngữ <span class="required">*</span></label>
                     <select id="language" required>
-                        <option value="">-- Select Language --</option>
+                        <option value="">-- Chọn Ngôn Ngữ --</option>
                         <option value="English">English</option>
                         <option value="Vietnamese">Tiếng Việt</option>
                     </select>
                 </div>
 
-                <button id="generateBtn" class="btn-generate">Generate Brand</button>
+                <button id="generateBtn" class="btn-generate">Tạo Thương Hiệu</button>
                 <div id="loading" class="loading" style="display: none;">
                     <div class="spinner"></div>
-                    <p>Creating your brand identity...</p>
+                    <p>Đang tạo danh tính thương hiệu của bạn...</p>
                 </div>
                 <div id="errorMessage" class="error-message" style="display: none;"></div>
             </section>
 
             <section id="resultsSection" class="results-section" style="display: none;">
-                <h2>Your Brand Identity</h2>
+                <h2>Danh Tính Thương Hiệu Của Bạn</h2>
                 
                 <div class="brand-results">
                     <div class="description-section">
-                        <h3>Company Description</h3>
+                        <h3>Mô Tả Công Ty</h3>
                         <div id="descriptionResult" class="description-display"></div>
                     </div>
 
                     <div class="slogan-section">
-                        <h3>Brand Slogan</h3>
+                        <h3>Slogan Thương Hiệu</h3>
                         <div id="sloganResult" class="slogan-display"></div>
                     </div>
                 </div>
 
                 <div class="action-buttons">
-                    <button id="regenerateBtn" class="btn-secondary">Regenerate</button>
-                    <button id="resetBtn" class="btn-secondary">Start Over</button>
+                    <button id="regenerateBtn" class="btn-secondary">Tạo Lại</button>
+                    <button id="resetBtn" class="btn-secondary">Bắt Đầu Lại</button>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p>Powered by Google Gemini AI | Made for entrepreneurs and startups</p>
+            <p>Được cấp bởi Google Gemini AI | Được tạo cho các doanh nhân và khởi nghiệp</p>
         </footer>
     </div>
 
     <!-- Copy notification -->
     <div id="copyNotification" class="copy-notification" style="display: none;">
-        ✓ Copied to clipboard!
+        ✓ Đã sao chép vào clipboard!
     </div>
 
     <script src="app.js"></script>

@@ -35,19 +35,19 @@ function validateForm() {
     const language = languageInput.value.trim();
 
     if (!companyName) {
-        showError('Please enter your company name');
+        showError('Vui lòng nhập tên công ty');
         return false;
     }
     if (!industry) {
-        showError('Please select an industry');
+        showError('Vui lòng chọn lĩnh vực');
         return false;
     }
     if (!style) {
-        showError('Please select a brand style');
+        showError('Vui lòng chọn phong cách thương hiệu');
         return false;
     }
     if (!language) {
-        showError('Please select a language');
+        showError('Vui lòng chọn ngôn ngữ');
         return false;
     }
 
@@ -110,7 +110,7 @@ async function generateBrand(formData) {
         // Check if API key is configured
         if (!CONFIG.API_KEY || CONFIG.API_KEY === 'YOUR_GOOGLE_GEMINI_API_KEY_HERE') {
             throw new Error(
-                'API Key not configured. Please set your Google Gemini API key in app.js (CONFIG.API_KEY)'
+                'API Key chưa được cấu hình. Vui lòng đặt khóa Google Gemini API của bạn trong app.js (CONFIG.API_KEY)'
             );
         }
 
@@ -123,7 +123,7 @@ async function generateBrand(formData) {
         resultsSection.scrollIntoView({ behavior: 'smooth' });
     } catch (error) {
         console.error('Generation error:', error);
-        showError(error.message || 'Failed to generate brand. Please try again.');
+        showError(error.message || 'Không thể tạo thương hiệu. Vui lòng thử lại.');
     } finally {
         generateBtn.disabled = false;
         loadingDiv.style.display = 'none';
@@ -186,20 +186,20 @@ async function callGeminiAPI(prompt) {
     if (!response.ok) {
         const errorData = await response.json();
         if (response.status === 401) {
-            throw new Error('Invalid API Key. Please check your Google Gemini API key configuration.');
+            throw new Error('Khóa API không hợp lệ. Vui lòng kiểm tra cấu hình khóa Google Gemini API của bạn.');
         }
         if (response.status === 429) {
-            throw new Error('Rate limit exceeded. Please wait a moment and try again.');
+            throw new Error('Vượt quá giới hạn yêu cầu. Vui lòng chờ một chút và thử lại.');
         }
         throw new Error(
-            errorData.error?.message || `API Error: ${response.status} ${response.statusText}`
+            errorData.error?.message || `Lỗi API: ${response.status} ${response.statusText}`
         );
     }
 
     const data = await response.json();
 
     if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
-        throw new Error('Unexpected API response format. Please try again.');
+        throw new Error('Định dạng phản hồi API không mong đợi. Vui lòng thử lại.');
     }
 
     return data.candidates[0].content.parts[0].text;
@@ -231,7 +231,7 @@ function parseAIResponse(responseText) {
 function displayResults(result) {
     // Display company description
     descriptionResult.innerHTML = '';
-    descriptionResult.textContent = result.description || 'Company description not generated';
+    descriptionResult.textContent = result.description || 'Mô tả công ty chưa được tạo';
 
     // Display slogan
     sloganResult.innerHTML = '';
@@ -240,12 +240,12 @@ function displayResults(result) {
     sloganDiv.style.position = 'relative';
     
     const sloganText = document.createElement('span');
-    sloganText.textContent = result.slogan || 'Slogan not generated';
+    sloganText.textContent = result.slogan || 'Slogan chưa được tạo';
     sloganDiv.appendChild(sloganText);
     
     const copyBtn = document.createElement('button');
     copyBtn.className = 'copy-btn';
-    copyBtn.textContent = 'Copy';
+    copyBtn.textContent = 'Sao Chép';
     copyBtn.style.position = 'absolute';
     copyBtn.style.right = '10px';
     copyBtn.style.top = '10px';
@@ -264,7 +264,7 @@ function copyToClipboard(text) {
         })
         .catch((err) => {
             console.error('Copy failed:', err);
-            alert('Failed to copy to clipboard');
+            alert('Không thể sao chép vào clipboard');
         });
 }
 
