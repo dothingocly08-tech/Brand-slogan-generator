@@ -1,7 +1,7 @@
 // Configuration
 const CONFIG = {
     API_ENDPOINT: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent',
-    API_KEY: 'AIzaSyBrRWpMDvwXKZzwYQhz-j4ByZpXX7X7X7X', // Replace with your actual API key
+    API_KEY: 'AIzaSyBbNF7K_LfT-OIhQOXSRbZqx-auEOh1Y24', 
 };
 
 // DOM Elements
