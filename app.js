@@ -8,7 +8,7 @@ const CONFIG = {
 const companyNameInput = document.getElementById('companyName');
 const industryInput = document.getElementById('industry');
 const styleInput = document.getElementById('style');
-const colorsInput = document.getElementById('colors');
+const languageInput = document.getElementById('language');
 const generateBtn = document.getElementById('generateBtn');
 const loadingDiv = document.getElementById('loading');
 const errorMessage = document.getElementById('errorMessage');
@@ -32,7 +32,7 @@ function validateForm() {
     const companyName = companyNameInput.value.trim();
     const industry = industryInput.value.trim();
     const style = styleInput.value.trim();
-    const colors = colorsInput.value.trim();
+    const language = languageInput.value.trim();
 
     if (!companyName) {
         showError('Please enter your company name');
@@ -46,8 +46,8 @@ function validateForm() {
         showError('Please select a brand style');
         return false;
     }
-    if (!colors) {
-        showError('Please enter color preferences');
+    if (!language) {
+        showError('Please select a language');
         return false;
     }
 
@@ -75,7 +75,7 @@ async function handleGenerate() {
         companyName: companyNameInput.value.trim(),
         industry: industryInput.value.trim(),
         style: styleInput.value.trim(),
-        colors: colorsInput.value.trim(),
+        language: languageInput.value.trim(),
     };
 
     lastFormData = formData;
@@ -93,7 +93,7 @@ function handleReset() {
     companyNameInput.value = '';
     industryInput.value = '';
     styleInput.value = '';
-    colorsInput.value = '';
+    languageInput.value = '';
     resultsSection.style.display = 'none';
     hideError();
     lastFormData = null;
@@ -132,6 +132,10 @@ async function generateBrand(formData) {
 
 // Build prompt for AI
 function buildPrompt(formData) {
+    const languageInstruction = formData.language === 'Vietnamese' 
+        ? 'Write the response entirely in Vietnamese.' 
+        : 'Write the response entirely in English.';
+    
     return `
 You are a professional marketing copywriter. Based on the following company information, create:
 1. A compelling 5-sentence company description for marketing purposes
@@ -140,7 +144,6 @@ You are a professional marketing copywriter. Based on the following company info
 Company Name: ${formData.companyName}
 Industry: ${formData.industry}
 Brand Style: ${formData.style}
-Color Preferences: ${formData.colors}
 
 Format your response EXACTLY as follows:
 COMPANY DESCRIPTION:
@@ -154,6 +157,7 @@ Make sure:
 - The slogan is memorable, easy to remember, and reflects the brand personality
 - Both are appropriate for the ${formData.industry} industry
 - The writing style matches the "${formData.style}" aesthetic
+- ${languageInstruction}
 `;
 }
 
