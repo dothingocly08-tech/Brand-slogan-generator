@@ -262,6 +262,16 @@ The application parses the API response to extract and display:
 - [Docker Documentation](https://docs.docker.com/)
 - [GitHub Guides](https://guides.github.com/)
 
+## ⚠️ Important Security Note
+
+**Note**: This implementation uses client-side API integration for educational purposes. In production environments, API keys should be securely handled on the backend through:
+- Environment variables
+- Secure API gateways
+- OAuth 2.0 authentication
+- API key rotation policies
+
+Never expose API keys in frontend code in production applications.
+
 ## 📄 License
 
 This project is open-source and available under the MIT License.

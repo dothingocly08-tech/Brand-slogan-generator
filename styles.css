@@ -247,29 +247,38 @@ body {
     color: var(--primary-color);
 }
 
-.logo-display {
+.description-display {
     width: 100%;
-    min-height: 300px;
+    min-height: 200px;
     background: white;
     border-radius: 8px;
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-.logo-placeholder {
-    text-align: center;
-    width: 100%;
-}
-
-.logo-description {
-    padding: 20px;
+.description-section {
     background: var(--light-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid var(--primary-color);
+}
+
+.description-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.description-display {
+    padding: 20px;
+    background: white;
     border-radius: 8px;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.8;
     color: var(--text-secondary);
+    text-align: justify;
 }
 
 .slogan-section {
